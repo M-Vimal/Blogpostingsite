@@ -1,0 +1,23 @@
+.crud-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+.formelement{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#btn-create,#update-btn{
+    margin-top: 15px;
+}
+
+.formelement input,textarea{
+    border-radius: 5px;
+    padding: 5px;
+}

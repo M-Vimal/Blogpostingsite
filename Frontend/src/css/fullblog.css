@@ -1,0 +1,28 @@
+.fullblogdiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imagediv{
+    margin-top: 5px;
+    width: 90%;
+    height: 600px;
+}
+
+#date{
+    margin-top: 10px;
+    }
+
+.descdiv{
+    margin-top: 30px;
+    width: 90%;
+
+}

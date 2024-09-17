@@ -1,0 +1,44 @@
+.logindiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+form {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 40px;
+}
+
+
+.form-elements{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-elements input{
+    margin-bottom: 5px;
+}
+
+.submitbtn{
+    width: 50%;
+    margin-top: 30px;
+}
+
+.form-element-submit{
+    display: flex;
+    justify-content: center;
+}
+
+.paradiv{
+    display: flex;
+    justify-content: center;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+  }
