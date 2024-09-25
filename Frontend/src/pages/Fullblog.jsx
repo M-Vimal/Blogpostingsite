@@ -8,11 +8,14 @@ const Fullblog = () => {
   useEffect(() => {
     const singleblog = async () => {
       try {
-        const res = await axios.get(`http://127.0.0.1:8000/singleblog/${id}`, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const res = await axios.get(
+          `https://vimalganesh.pythonanywhere.com/singleblog/${id}`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
         if (res) {
           console.log(res.data);
           setblog(res.data);
@@ -31,7 +34,7 @@ const Fullblog = () => {
     <div className="fullblogdiv">
       <div className="imagediv">
         <img
-          src={`http://127.0.0.1:8000/${blog.image}`}
+          src={`https://vimalganesh.pythonanywhere.com/${blog.image}`}
           alt={blog.title}
           className="blog-image"
         />

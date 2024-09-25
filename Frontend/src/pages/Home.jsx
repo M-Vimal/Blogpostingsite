@@ -7,7 +7,7 @@ const Home = () => {
   useEffect(() => {
     const home = async () => {
       try {
-        const res = await axios.get("http://127.0.0.1:8000/", {
+        const res = await axios.get("https://vimalganesh.pythonanywhere.com/", {
           headers: {
             "Content-Type": "application/json",
           },
@@ -33,15 +33,15 @@ const Home = () => {
 
   return (
     <div className="blog-container">
-      <h1>read your favorite blogs </h1>
+      <h1>Read your favorite blogs </h1>
       <div className="posts-grid">
         {posts.map((post,index)=>(
           <div key={index} className="post-card">
             <div className="blogimagediv">
-            <img  src={`http://127.0.0.1:8000/${post.image}`} alt={post.title} id="blogimage"/>
-            <p>{post.date}</p>
+            <img  src={`https://vimalganesh.pythonanywhere.com/${post.image}`} alt={post.title} id="blogimage"/>
+            <p id="date">{post.date} | {post.authorname}</p>
             </div>
-            <h1 id="blogtitle">{post.title}</h1>
+            <p id="blogtitle">{post.title}</p>
             <Link to={`/fullblog/${post.id}`}>view</Link>
           </div>
         ))

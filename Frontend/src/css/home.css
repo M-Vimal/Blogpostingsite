@@ -8,7 +8,7 @@
   
 .posts-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three posts per row */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));    
     gap: 30px;
     padding: 0 20px;
   }
@@ -24,10 +24,13 @@
   }
 
 
+
+
   .blogimagediv{
     margin-top: 5px;
-    width: 90%;
+    width: 100%;
     height: 300px;
+    margin-bottom: 10px;
   }
 
   #blogimage{
@@ -38,5 +41,33 @@
   }
 
   #blogtitle{
-    margin-top: 15px;
+    margin-top: 25px;
+    word-wrap: break-word;
   }
+
+  #date{
+    margin-top: 0px;
+  }
+
+@media screen and (max-width:300px) {
+  .blog-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 10px;
+    box-sizing: border-box;
+  }  
+  .blogimagediv{
+    width: 90%;
+    height: 30vh;
+  }
+  #blogtitle{
+    font-size: large;
+  }
+}
+
+
+
+  

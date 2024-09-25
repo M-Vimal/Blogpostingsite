@@ -40,6 +40,7 @@ class userloginserializer(serializers.ModelSerializer):
 
 class postserializer(serializers.ModelSerializer):
     image = serializers.ImageField(required = False,allow_null = True)
+    authorname = serializers.CharField(source = 'author.username')
     class Meta:
         model = Post
-        fields = ['id','title','author','desc','date','image']
+        fields = ['id','title','author','desc','date','image','authorname']

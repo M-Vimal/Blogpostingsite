@@ -10,6 +10,20 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100%;
+  background-image: url('../public/bg.jpg');
+  overflow: hidden;
+  object-fit: cover;
+  color: white;
+}
+
+.inside-reg-div{
+  background: transparent;
+  backdrop-filter: blur(5000px);
+  width: 400px;
+  height: 300px;
+  box-shadow: 6px 6px 6px gray;
+    
 }
 
 .form-elements{
@@ -20,4 +34,34 @@
 .form-element-submit{
   display: flex;
   justify-content: center;
+}
+
+.paradiv{
+  display: flex;
+  justify-content: center;
+  margin-top: 8%;
+}
+
+.icon{
+  position: absolute;
+  color: black;
+  margin-top: 9px;
+  left: 80%;
+  pointer-events: none;
+}
+
+
+@media screen and (max-width:300px){
+
+  .inside-reg-div{
+      max-width: 250px;
+  }
+
+  .icon{
+      left: 75%;
+  }
+
+  .paradiv{
+    margin-top: 13%;
+  }
 }

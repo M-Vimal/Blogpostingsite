@@ -27,18 +27,20 @@ const Posts = () => {
   return (
     <div className="mypost" >
       <h1 className="title">myposts</h1>
-      <a href="/create" ><h3 id="addpost">Add post</h3></a>
+      <div className="addpost">
+      <a href="/create" ><p id="addroute">Add post</p></a>
+      </div>
       <div className="mypostdiv">
         {mypost.map((post, index) => (
           <div key={index} className="mypostcard">
-            <div className="mypostimagediv">
+          <div className="mypostimagediv">
             <img src={post.image} alt={post.title} id="image" />
-            {post.date}
+            <p id="date">{post.date}</p>
           </div>
-            <h1 id="myposttitle">{post.title}</h1>
+            <p id="myposttitle">{post.title}</p>
             <div className="btndiv">
-              <Link to={`/fullblog/${post.id}`}><button className="btn btn-outline-primary">View</button></Link>
-              <Link to={`/update/${post.id}`} state={{post}}><button className="btn btn-outline-success">Update</button></Link>
+              <Link to={`/fullblog/${post.id}`}><button className="btn btn-outline-primary" id="view">View</button></Link>
+              <Link to={`/update/${post.id}`} state={{post}}><button className="btn btn-outline-success" id="update">Update</button></Link>
               <Link to={`/delete/${post.id}`}><button className="btn btn-outline-danger" id="del">Delete</button></Link>
             </div>
           </div>

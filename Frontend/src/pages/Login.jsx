@@ -4,10 +4,12 @@ import { useRef, useContext } from "react";
 import axios from "axios";
 import { Authcontext } from "../App";
 import { useNavigate } from "react-router-dom";
+import { FaUserTie } from "react-icons/fa";
+import { RiLockPasswordFill } from "react-icons/ri";
 const Login = () => {
   const usernameref = useRef();
   const passwordref = useRef();
-  const [errors,seterrors]=useState({})
+  const [errors, seterrors] = useState({});
   const { auth, setauth } = useContext(Authcontext);
   const navigate = useNavigate();
   const login = async (e) => {
@@ -16,7 +18,10 @@ const Login = () => {
     const password = passwordref.current.value;
     const data = { username, password };
     try {
-      const res = await axios.post("http://127.0.0.1:8000/login/", data);
+      const res = await axios.post(
+        "https://vimalganesh.pythonanywhere.com/login/",
+        data
+      );
       if (res) {
         console.log(res.data);
         localStorage.setItem("accesstoken", res.data.access);
@@ -31,25 +36,40 @@ const Login = () => {
     } catch (err) {
       if (err.response) {
         console.log("error", err.response.data);
-        seterrors(err.response.data)
+        seterrors(err.response.data);
       }
     }
   };
   return (
     <div className="logindiv">
       <h1>welcome to login page</h1>
-      <div>
+      <div className="inside-logindiv">
         <form onSubmit={login}>
           <div className="form-elements">
-            <label htmlFor="username">username</label>
-            <input type="text" name="username" required ref={usernameref} />
+            <input
+              type="text"
+              name="username"
+              required
+              ref={usernameref}
+              placeholder="username"
+            />
+            <FaUserTie className="icon" />
           </div>
           <div className="form-elements">
-            <label htmlFor="password">password</label>
-            <input type="password" name="password" required ref={passwordref} />
-            {errors.message && (<p className="error-message">{errors.message}</p>)}
+            <input
+              type="password"
+              name="password"
+              required
+              ref={passwordref}
+              placeholder="password"
+            />
+            <RiLockPasswordFill className="icon" />
           </div>
-          
+          <div className="form-elements">
+            {errors.message && (
+              <p className="error-message">{errors.message}</p>
+            )}
+          </div>
           <div className="form-element-submit">
             <input type="submit" className="btn btn-success submitbtn" />
           </div>

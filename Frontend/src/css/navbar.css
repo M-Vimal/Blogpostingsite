@@ -1,0 +1,33 @@
+
+
+.hamburger {
+    display: none; 
+
+}
+
+
+@media screen and (max-width:300px) {
+    .navbar{
+        display: none;
+    }
+
+    .hamburger{
+        display: block;
+        cursor: pointer;
+        margin-top: 2px;
+        margin-left: 2px;
+        width: 60px;
+    }
+    .dropdown-menu {
+        position: absolute; /* Position dropdown */
+        top: 30px; /* Adjust as needed */
+        left: 0;
+        z-index: 1000; /* Ensure dropdown is above other content */
+        width: 50px !important;
+    }   
+}
+
+
+
+
+

@@ -1,6 +1,6 @@
 import axios from 'axios'
 const axiosInstance = axios.create({
-  baseURL: "http://127.0.0.1:8000/",
+  baseURL: "https://vimalganesh.pythonanywhere.com/",
   headers: {
     "Content-Type": "application/json",
   },
@@ -28,7 +28,7 @@ axiosInstance.interceptors.response.use(
       try {
         const refreshtoken = localStorage.getItem("refreshtoken"); // Retrieve the stored refresh token.
         // Make a request to your auth server to refresh the token.
-        const response = await axios.post("http://127.0.0.1:8000/api/token/", {
+        const response = await axios.post("https://vimalganesh.pythonanywhere.com/api/token/", {
           refresh:refreshtoken,
         });
         if (response){

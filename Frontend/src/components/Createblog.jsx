@@ -35,7 +35,7 @@ const Create = () => {
 
   return (
     <div className="crud-div">
-      <h1>write your blog</h1>
+      <h1 id="crud-h1">write your blog</h1>
       <form onSubmit={create}>
         <div className="formelement">
         <label>Title</label>
@@ -43,7 +43,7 @@ const Create = () => {
         <label>Image</label>
         <input type="file" name="image" ref={imageref} />
         <label>Desc</label>
-        <textarea name="desc" ref={descref}></textarea>
+        <textarea name="desc" ref={descref} ></textarea>
         <input type="submit" className="btn btn-success" id="btn-create" value="create" />
         </div>
       </form>

@@ -1,8 +1,16 @@
 import React from "react";
 import { useContext } from "react";
 import { Authcontext } from "../App";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
+import "../css/navbar.css";
 const Navbar = () => {
-  const {auth,setauth} = useContext(Authcontext);
+  const { auth, setauth } = useContext(Authcontext);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleham = () => {
+    setIsOpen((prevState) => !prevState);
+    console.log("on");
+  };
 
   return (
     <div>
@@ -11,17 +19,7 @@ const Navbar = () => {
           <a className="navbar-brand" href="#">
             Navbar
           </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
@@ -45,8 +43,34 @@ const Navbar = () => {
               )}
             </ul>
           </div>
+          
         </div>
       </nav>
+      <div className="hamburger">
+            <GiHamburgerMenu onClick={toggleham} />
+          </div>
+          {isOpen && (
+            <div
+              className="dropdown-menu show"
+              aria-labelledby="navbarDropdown"
+            >
+              <a className="dropdown-item" href="/">
+                Home
+              </a>
+              <a className="dropdown-item" href="/myposts">
+                MyPosts
+              </a>
+              {auth ? (
+                <a className="dropdown-item" href="/logout">
+                  Logout
+                </a>
+              ) : (
+                <a className="dropdown-item" href="/login">
+                  Login
+                </a>
+              )}
+            </div>
+          )}
     </div>
   );
 };
