@@ -6,8 +6,9 @@ const Home = () => {
   const [posts, setposts] = useState([]);
   useEffect(() => {
     const home = async () => {
+      //https://vimalganesh.pythonanywhere.com/
       try {
-        const res = await axios.get("https://vimalganesh.pythonanywhere.com/", {
+        const res = await axios.get("http://localhost:8000/", {
           headers: {
             "Content-Type": "application/json",
           },
@@ -38,7 +39,7 @@ const Home = () => {
         {posts.map((post,index)=>(
           <div key={index} className="post-card">
             <div className="blogimagediv">
-            <img  src={`https://vimalganesh.pythonanywhere.com/${post.image}`} alt={post.title} id="blogimage"/>
+            <img  src={`http://localhost:8000/${post.image}`} alt={post.title} id="blogimage"/>
             <p id="date">{post.date} | {post.authorname}</p>
             </div>
             <p id="blogtitle">{post.title}</p>

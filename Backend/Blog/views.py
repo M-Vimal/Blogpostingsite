@@ -89,11 +89,15 @@ class RegisterApiView(APIView):
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class MypostApiView(ListCreateAPIView):
+    
     permission_classes = [IsAuthenticated]
     serializer_class = postserializer
     def get_queryset(self):
         user = self.request.user
         return Post.objects.filter(author = user)
+    def perform_create(self, serializer):
+        serializer.save(author = self.request.user)
+    
 
     
 

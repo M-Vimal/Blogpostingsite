@@ -11,7 +11,7 @@ const Create = () => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("title", titleref.current.value);
-    formData.append("author", localStorage.getItem("id"));
+    // formData.append("author", localStorage.getItem("id"));
     formData.append("desc", descref.current.value);
     formData.append("image", imageref.current.files[0]);
     console.log(formData);

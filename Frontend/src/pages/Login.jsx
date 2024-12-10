@@ -19,7 +19,8 @@ const Login = () => {
     const data = { username, password };
     try {
       const res = await axios.post(
-        "https://vimalganesh.pythonanywhere.com/login/",
+        //"https://vimalganesh.pythonanywhere.com/login/",
+        "http://localhost:8000/login/",                    
         data
       );
       if (res) {

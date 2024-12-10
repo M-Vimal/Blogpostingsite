@@ -7,9 +7,10 @@ const Fullblog = () => {
   const [blog, setblog] = useState([]);
   useEffect(() => {
     const singleblog = async () => {
+      //https://vimalganesh.pythonanywhere.com/
       try {
         const res = await axios.get(
-          `https://vimalganesh.pythonanywhere.com/singleblog/${id}`,
+          `http://localhost:8000/singleblog/${id}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -34,7 +35,7 @@ const Fullblog = () => {
     <div className="fullblogdiv">
       <div className="imagediv">
         <img
-          src={`https://vimalganesh.pythonanywhere.com/${blog.image}`}
+          src={`http://localhost:8000/${blog.image}`}
           alt={blog.title}
           className="blog-image"
         />
