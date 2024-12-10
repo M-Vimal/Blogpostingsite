@@ -19,7 +19,7 @@ const Register = () => {
     const password = passwordref.current.value;
     const data = { username, email, password };
     try {
-      const res = await axios.post("https://vimalganesh.pythonanywhere.com/register/", data, {
+      const res = await axios.post("http://localhost:8000/register/", data, {
         headers: {
           "Content-Type": "application/json",
         },

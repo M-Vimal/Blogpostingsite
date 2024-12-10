@@ -66,6 +66,7 @@ class RegisterApiView(APIView):
     permission_classes= [AllowAny]
     def post(self,request):
         try:
+            print("r",request.data)
             user = userregisterserializer(data=request.data)
             if user.is_valid():
                 user.save()  # Save the user if data is valid
